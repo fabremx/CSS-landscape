@@ -1,0 +1,170 @@
+@import './shared.scss';
+
+@mixin cloud-animation($class, $start, $duration) {
+    @at-root {
+        $animation-name-begin: unique-id();
+        $animation-name: unique-id();
+
+        @keyframes #{$animation-name-begin} {
+            from {
+                left: #{$start}px;
+            }
+
+            to {
+                left: 100%;
+            }
+        }
+
+        @keyframes #{$animation-name} {
+            from {
+                left: -300px;
+            }
+
+            to {
+                left: 100%;
+            }
+        }
+
+
+        #{$class} {
+            animation-name: $animation-name-begin, $animation-name;
+            animation-duration: #{$duration}s,
+            #{calc($duration + 20)}s;
+            animation-delay: 0s,
+            #{$duration}s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1, infinite;
+        }
+    }
+}
+
+.sky__cloud {
+    position: absolute;
+    background: #f7e7eb;
+
+    div {
+        position: absolute;
+        border-radius: 50%;
+        background: #ffffff;
+        box-shadow: inset -19px -2px 6px -3px #f7e7eb;
+    }
+
+    div:nth-child(1) {
+        width: 50px;
+        height: 50px;
+        top: 0;
+    }
+
+    div:nth-child(2) {
+        width: 70px;
+        height: 70px;
+        left: 26px;
+        top: -19px;
+    }
+
+    div:nth-child(3) {
+        width: 100px;
+        height: 100px;
+        left: 64px;
+        top: -48px;
+    }
+
+    div:nth-child(4) {
+        width: 80px;
+        height: 80px;
+        left: 129px;
+        top: -28px;
+    }
+}
+
+.sky__cloud--small {
+    scale: 0.4;
+}
+
+.sky__cloud--medium {
+    scale: 0.75;
+}
+
+.sky__cloud--big {
+    scale: 1.2;
+}
+
+$move_animation_duration_min: 60;
+$move_animation_duration_max: 200;
+
+$number_of_clouds: 14;
+
+$start_x_position: -1000;
+
+@for $i from 1 through calc($number_of_clouds + 1) {
+    $left: calc($start_x_position + ($i * 250));
+    $top: randomNum(40, 350);
+    $duration: randomNum($move_animation_duration_min, $move_animation_duration_max);
+
+    $cloud_type: randomNum(1, 3);
+
+    .sky__cloud:nth-child(#{$i}) {
+        top: #{$top}px;
+        left: #{$left}px;
+
+        margin-top: $cloud_type;
+
+        @include cloud-animation(&, $left, $duration);
+
+        @if $cloud_type ==1 {
+            @extend .sky__cloud--big;
+        }
+
+        @else if $cloud_type ==2 {
+            @extend .sky__cloud--medium;
+        }
+
+        @else if $cloud_type ==3 {
+            @extend .sky__cloud--small;
+        }
+    }
+}
+
+.sky__cloud--first {
+    $top: 150px;
+    $left: 408px;
+    $duration: randomNum($move_animation_duration_min, $move_animation_duration_max);
+
+    top: $top;
+    left: $left;
+
+    @include cloud-animation(&, $left, $duration);
+}
+
+.sky__cloud--second {
+    $top: 226px;
+    $left: 1121px;
+    $duration: randomNum($move_animation_duration_min, $move_animation_duration_max);
+
+    top: $top;
+    left: $left;
+
+    @include cloud-animation(&, $left, $duration);
+}
+
+.sky__cloud--third {
+    $top: 275px;
+    $left: 714px;
+    $duration: randomNum($move_animation_duration_min, $move_animation_duration_max);
+
+    top: $top;
+    left: $left;
+
+    @include cloud-animation(&, $left, $duration);
+}
+
+.sky__cloud--fourth {
+    $top: 95px;
+    $left: 980px;
+    $duration: randomNum($move_animation_duration_min, $move_animation_duration_max);
+
+    top: $top;
+    left: $left;
+
+    @include cloud-animation(&, $left, $duration);
+}

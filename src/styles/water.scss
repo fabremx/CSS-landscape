@@ -1,0 +1,102 @@
+.land__water {
+    position: absolute;
+    right: 0;
+    width: 64%;
+    height: 39%;
+    background: linear-gradient(to right, #D4F1F9, #B1E8F9);
+    box-shadow: inset 0 1px 4px -3px white;
+}
+
+.water__wave {
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+
+        height: 10px;
+        width: 40px;
+    }
+
+    &::before {
+        border-radius: 100% 100% 0 0;
+        background: linear-gradient(to bottom, #fff, transparent 70%);
+    }
+
+    &::after {
+        border-radius: 0 0 100% 100%;
+        background: linear-gradient(to top, #fff, transparent 70%);
+    }
+
+    &:nth-child(1) {
+        &:before {
+            right: 40px;
+            top: 20px;
+        }
+
+        &:after {
+            right: 67px;
+            top: 18px;
+        }
+    }
+
+    &:nth-child(2) {
+        &:before {
+            right: 280px;
+            top: 20px;
+        }
+
+        &:after {
+            right: 307px;
+            top: 18px;
+        }
+    }
+
+    &:nth-child(3) {
+        &:before {
+            right: 150px;
+            top: 40px;
+        }
+
+        &:after {
+            right: 177px;
+            top: 38px;
+        }
+    }
+
+    &:nth-child(4) {
+        &:before {
+            right: 245px;
+            top: 65px;
+        }
+
+        &:after {
+            right: 277px;
+            top: 62px;
+        }
+    }
+
+    &:nth-child(5) {
+        &:before {
+            right: 395px;
+            top: 40px;
+        }
+
+        &:after {
+            right: 427px;
+            top: 38px;
+        }
+    }
+
+    &:nth-child(6) {
+        &:before {
+            right: 525px;
+            top: 15px;
+        }
+
+        &:after {
+            right: 557px;
+            top: 13px;
+        }
+    }
+}

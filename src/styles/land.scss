@@ -1,0 +1,49 @@
+.land {
+    width: 100%;
+    height: 34%;
+
+    position: relative;
+    overflow: initial;
+}
+
+.land__left {
+    width: 92%;
+    height: calc(100% + 20px);
+    border-radius: 0 90% 0 0;
+    background: linear-gradient(to right, #5E754F, #9bb964);
+    position: absolute;
+    top: -20px;
+}
+
+.land__tree {
+    position: absolute;
+    top: 20px;
+    left: 100px;
+
+    .tree__base {
+        height: 50px;
+        width: 15px;
+        background: #9F6E58;
+    }
+
+    .tree__leaf {
+        position: relative;
+        left: -19px;
+
+        width: 50px;
+        height: 150px;
+
+        background: red;
+        // clip-path: inset(45% 0% 33% 10% round 10px);
+        border-radius: 50% 50% 49% 51% / 100% 100% 0% 0%;
+    }
+}
+
+.land__right {
+    width: 190%;
+    height: 229%;
+    border-radius: 100% 0 0 0;
+    background: linear-gradient(to left, #7D9352, #b6cf87);
+    position: absolute;
+    top: -40px;
+}

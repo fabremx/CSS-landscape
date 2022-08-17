@@ -1,0 +1,44 @@
+.sky {
+    position: relative;
+    width: 100%;
+    height: 66%;
+}
+
+.sky.sunny {
+    background: linear-gradient(#75AAF0, #7BC1FA, #8FDAFA, #A3E3FA);
+}
+
+.sky.sunny-sunset {
+    background: linear-gradient(#32334D, #5A3E49, #834945, #AB5F43, #FC984C);
+
+    .sky__cloud {
+        opacity: 0.3;
+    }
+
+    .sky__sun {
+        background-color: #F2F27A;
+        box-shadow: 0 0 21px 26px #f2f27a, 0 0 35px 49px #FC6A38, 0 0 42px 7px #FC6A38
+    }
+}
+
+.sky.sunny {
+    .sky__cloud {
+        opacity: 1;
+    }
+
+    .sky__sun {
+        background-color: #F2F27A;
+        box-shadow: 0 0 21px 26px #f2f27a, 0 0 35px 49px #ffcc33, 0 0 42px 7px #ffaa1d
+    }
+}
+
+.sky__sun {
+    position: absolute;
+    top: 150px;
+    left: 150px;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+}

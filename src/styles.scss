@@ -1,0 +1,30 @@
+@import './styles/index';
+
+html,
+body,
+body>div {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+// .land__rock {
+//     position: absolute;
+//     top: -44px;
+//     right: 200px;
+//     height: 44px;
+//     width: 95px;
+//     border-radius: 100% 45% 0 0;
+//     background-image: linear-gradient(to right, #9d7c66, #D4AB83);
+// }
+
+// .land__rock::before {
+//     position: absolute;
+//     content: "";
+//     height: 26px;
+//     width: 95px;
+//     border-radius: 0 0 45% 100%;
+//     background-image: linear-gradient(to right, #9d7c66, #D4AB83);
+//     top: 46px;
+//     filter: blur(1.2px);
+// }
