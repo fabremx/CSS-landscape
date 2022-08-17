@@ -1,0 +1,68 @@
+/* COLORS */
+$l-blue: #0B0F2B;
+$d-blue: #090D23;
+$black: #333;
+$l-grey: #EAEAEA;
+$d-grey: #9E9E9E;
+$grey: #BFBFBF;
+$yellow: #EFE894;
+
+@mixin pseudo ($position: absolute, $display: block, $content: '') {
+    position: $position;
+    display: $display;
+    content: '';
+}
+
+@mixin size($height, $width) {
+    height: $height;
+    width: $width;
+}
+
+%craters {
+    @include pseudo;
+    background: $grey;
+    box-shadow: inset 2px 0 $d-grey;
+    border-radius: 50%;
+}
+
+.moon {
+    position: absolute;
+    bottom: 0px;
+    left: 43%;
+
+    width: 30px;
+    height: 30px;
+
+    margin: auto;
+    @include size(100px, 100px);
+    background: $l-grey;
+    border-radius: 50%;
+    box-shadow: inset -15px 0 6px $grey, 0 0 8px $l-grey;
+}
+
+.craters {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    @include size(20%, 20%);
+    background: $grey;
+    border-radius: 50%;
+    box-shadow: inset -1px 0 1px $d-grey;
+    opacity: 0.4;
+
+    &::before {
+        @extend %craters;
+        top: -8px;
+        right: -25px;
+        @include size(15px, 15px);
+        box-shadow: inset -1px 0 1px $d-grey;
+    }
+
+    &::after {
+        @extend %craters;
+        top: 30px;
+        left: 30px;
+        @include size(10px, 10px);
+        box-shadow: inset -1px 0 1px $d-grey;
+    }
+}

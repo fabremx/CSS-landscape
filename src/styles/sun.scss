@@ -1,0 +1,76 @@
+@import './shared.scss';
+
+@mixin sun-sunset {
+    background-color: #fff;
+    box-shadow: 0 0 21px 26px #fff, 0 0 35px 49px #f2f27a, 0 0 42px 7px #f2f27a;
+}
+
+@mixin sun-midday {
+    background-color: #F2F27A;
+    box-shadow: 0 0 21px 26px #f2f27a, 0 0 35px 49px #ffcc33, 0 0 42px 7px #ffaa1d;
+}
+
+@keyframes sun_moving {
+    to {
+        top: 100px
+    }
+
+    from {
+        top: 110%
+    }
+}
+
+@keyframes sun_sunset {
+
+    0%,
+    22% {
+        @include sun-midday;
+    }
+
+    28%,
+    77% {
+        @include sun-sunset;
+    }
+
+    85%,
+    100% {
+        @include sun-midday;
+    }
+}
+
+@keyframes circle {
+    from {
+        -webkit-transform: rotateZ(0deg)
+    }
+
+    to {
+        -webkit-transform: rotateZ(360deg)
+    }
+}
+
+.astral-body-orbit {
+    position: relative;
+
+    width: 91%;
+    height: 165%;
+    margin: 5% auto;
+    border-radius: 50%;
+
+    z-index: 3;
+
+    animation: circle $day_time infinite linear;
+}
+
+.sun {
+    position: absolute;
+    top: 0px;
+    left: 43%;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    @include sun-midday;
+    animation: sun_sunset $day_time infinite linear;
+}

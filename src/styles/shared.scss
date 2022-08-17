@@ -1,3 +1,5 @@
+$day_time: 10s;
+
 @function randomNum($min, $max) {
     $rand: random();
     $randomNum: $min +floor($rand * (($max - $min) + 1));
