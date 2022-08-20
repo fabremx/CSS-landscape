@@ -1,7 +1,7 @@
 @import './shared.scss';
 
 @mixin water-day {
-    background-image: linear-gradient(to right, #B3CDDF, #A2EEF2);
+    background-image: linear-gradient(to right, #006992, #298AAA, #51ACC2, #7ACDDA);
 }
 
 @mixin water-night {
@@ -26,13 +26,12 @@
     }
 }
 
-.land__water {
+.water {
     position: absolute;
     right: 0;
-    width: 64%;
-    height: 39%;
+    width: 100%;
+    height: 100%;
 
-    border-top: 0.2px solid rgba(255, 255, 255, 0.4);
     box-shadow: inset 0 1px 4px -3px white;
     @include water-day;
 

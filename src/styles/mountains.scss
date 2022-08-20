@@ -1,0 +1,63 @@
+.mountains {
+    position: relative;
+    width: 55%;
+
+    div {
+        position: absolute;
+        width: 100%;
+    }
+}
+
+.mountain__first {
+    height: 95px;
+
+    top: -94px;
+    z-index: 3;
+
+    background: linear-gradient(to bottom, #3E373E, #4F4549, #625f5f);
+    clip-path: polygon(0 23%, 5% 20%, 16% 58%, 22% 49%, 35% 65%, 59% 44%, 67% 15%, 68% 14%, 100% 100%, 0 100%);
+
+    .mountain-shadow {
+        width: 100%;
+        height: inherit;
+        background: #706868;
+        clip-path: polygon(0% 100%, 5% 73%, 3% 44%, 7% 0%, 22% 101%, 86% 100%, 63% 100%, 69% 73%, 67% 47%, 68% 0%, 100% 100%);
+        z-index: 100;
+    }
+}
+
+.mountain__second {
+    height: 156px;
+
+    top: -156px;
+    z-index: 2;
+
+    background: linear-gradient(to bottom, #B6B7BB, #76787A);
+    clip-path: polygon(0% 100%, 21% 11%, 33% 61%, 44% 77%, 57% 29%, 68% 63%, 100% 100%, 0 100%);
+
+    .mountain-shadow {
+        width: 100%;
+        height: inherit;
+        background: #E7EAF2;
+        clip-path: polygon(10% 100%, 19% 59%, 17% 41%, 23% 0%, 50% 100%, 57% 57%, 56% 43%, 58% 0%, 100% 100%);
+        z-index: 100;
+    }
+}
+
+.mountain__third {
+    height: 250px;
+
+    top: -250px;
+    z-index: 1;
+    background: linear-gradient(to bottom, #AC9272, #9B715F);
+    clip-path: polygon(11% 100%, 40% 0%, 66% 87%, 51% 61%, 63% 31%, 91% 100%, 100% 100%, 0 100%);
+
+    .mountain-shadow {
+        width: 100%;
+        height: inherit;
+        background: #B7A98F;
+        clip-path: polygon(30% 92%, 40% 59%, 37% 34%, 40% 0%, 70% 100%, 57% 100%, 67% 60%, 65% 48%, 59% 0%, 100% 100%);
+
+        z-index: 100;
+    }
+}
