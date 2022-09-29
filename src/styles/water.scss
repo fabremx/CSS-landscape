@@ -1,5 +1,7 @@
 @import './shared.scss';
 
+$number_of_waves: 10;
+
 @mixin water-day {
     background-image: linear-gradient(to right, #006992, #298AAA, #51ACC2, #7ACDDA);
 }
@@ -9,7 +11,6 @@
 }
 
 @keyframes water_color {
-
     0%,
     22% {
         opacity: 0;
@@ -53,7 +54,6 @@
 }
 
 .water__wave {
-
     &::before,
     &::after {
         content: "";
@@ -75,75 +75,27 @@
         background: linear-gradient(to top, #fff, transparent 70%);
     }
 
-    &:nth-child(1) {
-        &:before {
-            right: 40px;
-            top: 20px;
-        }
+    @for $i from 1 through calc($number_of_waves) {
+        $operator: $i % 5;
+        $left: calc((randomNum(100, 200) + 50)  * $operator);
 
-        &:after {
-            right: 67px;
-            top: 18px;
+        $top: 0;
+        @if $i > 5 {
+            $top: randomNum(15, 45);
+        } @else {
+            $top: randomNum(65, 100);
         }
-    }
+        
+        &:nth-child(#{$i}) {
+            &:before {
+                left: #{$left}px;
+                top: #{$top}px;
+            }
 
-    &:nth-child(2) {
-        &:before {
-            right: 280px;
-            top: 20px;
-        }
-
-        &:after {
-            right: 307px;
-            top: 18px;
-        }
-    }
-
-    &:nth-child(3) {
-        &:before {
-            right: 150px;
-            top: 40px;
-        }
-
-        &:after {
-            right: 177px;
-            top: 38px;
-        }
-    }
-
-    &:nth-child(4) {
-        &:before {
-            right: 245px;
-            top: 65px;
-        }
-
-        &:after {
-            right: 277px;
-            top: 62px;
-        }
-    }
-
-    &:nth-child(5) {
-        &:before {
-            right: 395px;
-            top: 40px;
-        }
-
-        &:after {
-            right: 427px;
-            top: 38px;
-        }
-    }
-
-    &:nth-child(6) {
-        &:before {
-            right: 525px;
-            top: 15px;
-        }
-
-        &:after {
-            right: 557px;
-            top: 13px;
+            &:after {
+                left: #{calc($left + 27)}px;
+                top: #{calc($top - 2)}px;
+            }
         }
     }
 }
