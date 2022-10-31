@@ -1,14 +1,17 @@
-# CSS Landscape
+# 🌄 CSS Landscape
 
 Pure litle CSS landscape made with Sass just for fun.
 
 Handle three period of the day
 
-- Day
+## Day
+
 ![Day](./images/day.png)
 
-- Sunset
+## Sunset
+
 ![Sunset](./images/sunset.png)
 
-- Night
+## Night
+
 ![Night](./images/night.png)

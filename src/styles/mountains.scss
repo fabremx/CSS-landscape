@@ -1,11 +1,30 @@
+$first-moutain-main-1: #4A4145;
+$first-moutain-main-2: #5F5A5B;
+$first-moutain-shadow: #706868;
+$first-moutain-reflection: #b6b5b5;
+
+$second-moutain-main-1: #929497;
+$second-moutain-main-2: #636568;
+$second-moutain-shadow: #E7EAF2;
+
+$third-moutain-main-1: #A17D66;
+$third-moutain-main-2: #A17D66;
+$third-moutain-shadow: #B7A98F;
+
 .mountains {
     position: relative;
-    width: 55%;
+    width: 70%;
 
     div {
         position: absolute;
         width: 100%;
     }
+}
+
+.mountain-shadow {
+    width: 100%;
+    height: inherit;
+    z-index: 100;
 }
 
 .mountain__first {
@@ -14,16 +33,24 @@
     top: -94px;
     z-index: 3;
 
-    background: linear-gradient(to bottom, #3E373E, #4F4549, #625f5f);
+    // background: linear-gradient(to bottom, #203544, #407194);
+    background: linear-gradient(to bottom, $first-moutain-main-1, $first-moutain-main-2);
     clip-path: polygon(0 23%, 5% 20%, 16% 58%, 22% 49%, 35% 65%, 59% 44%, 67% 15%, 68% 14%, 100% 100%, 0 100%);
+}
 
-    .mountain-shadow {
-        width: 100%;
-        height: inherit;
-        background: #706868;
-        clip-path: polygon(0% 100%, 5% 73%, 3% 44%, 7% 0%, 22% 101%, 86% 100%, 63% 100%, 69% 73%, 67% 47%, 68% 0%, 100% 100%);
-        z-index: 100;
-    }
+.mountain__first .mountain-shadow {
+    // background: #447292;
+    background: $first-moutain-shadow;
+    clip-path: polygon(0% 100%, 5% 73%, 3% 44%, 7% 0%, 22% 101%, 86% 100%, 63% 100%, 69% 73%, 67% 47%, 68% 0%, 100% 100%);
+}
+
+.mountain__reflection {
+    height: 40px;
+    z-index: 9;
+    clip-path: polygon(0 23%, 5% 20%, 16% 58%, 22% 49%, 35% 65%, 59% 44%, 67% 15%, 68% 14%, 100% 100%, 0 100%);
+    background: linear-gradient(to bottom, $second-moutain-main-1, $second-moutain-main-2);
+    opacity: 0.5;
+    transform: rotateX(180deg);
 }
 
 .mountain__second {
@@ -32,16 +59,15 @@
     top: -156px;
     z-index: 2;
 
-    background: linear-gradient(to bottom, #B6B7BB, #76787A);
-    clip-path: polygon(0% 100%, 21% 11%, 33% 61%, 44% 77%, 57% 29%, 68% 63%, 100% 100%, 0 100%);
+    // background: linear-gradient(to bottom, #3e88b4, #497f9e);
+    background: linear-gradient(to bottom, $second-moutain-main-1, $second-moutain-main-2);
+    clip-path: polygon(0% 100%, 21% 28%, 33% 61%, 44% 77%, 57% 42%, 68% 63%, 100% 100%, 0 100%);
+}
 
-    .mountain-shadow {
-        width: 100%;
-        height: inherit;
-        background: #E7EAF2;
-        clip-path: polygon(10% 100%, 19% 59%, 17% 41%, 23% 0%, 50% 100%, 57% 57%, 56% 43%, 58% 0%, 100% 100%);
-        z-index: 100;
-    }
+.mountain__second .mountain-shadow {
+    // background: #558eaf;
+    background: $second-moutain-shadow;
+    clip-path: polygon(10% 100%, 20% 59%, 20% 41%, 23% 0%, 50% 100%, 57% 57%, 56% 43%, 58% 0%, 100% 100%);
 }
 
 .mountain__third {
@@ -49,15 +75,13 @@
 
     top: -250px;
     z-index: 1;
-    background: linear-gradient(to bottom, #AC9272, #9B715F);
-    clip-path: polygon(11% 100%, 40% 0%, 66% 87%, 51% 61%, 63% 31%, 91% 100%, 100% 100%, 0 100%);
+    // background: linear-gradient(to bottom, #6294ae, #4e798f);
+    background: linear-gradient(to bottom, $third-moutain-main-1, $third-moutain-main-2);
+    clip-path: polygon(11% 100%, 40% 30%, 66% 94%, 51% 70%, 63% 40%, 91% 100%, 100% 100%, 0 100%);
+}
 
-    .mountain-shadow {
-        width: 100%;
-        height: inherit;
-        background: #B7A98F;
-        clip-path: polygon(30% 92%, 40% 59%, 37% 34%, 40% 0%, 70% 100%, 57% 100%, 67% 60%, 65% 48%, 59% 0%, 100% 100%);
-
-        z-index: 100;
-    }
+.mountain__third .mountain-shadow {
+    // background: #79abc4;
+    background: $third-moutain-shadow;
+    clip-path: polygon(30% 92%, 40% 61%, 38% 43%, 44% 0%, 59% 98%, 55% 100%, 66% 59%, 64% 48%, 59% 0%, 100% 100%);
 }
